@@ -1,0 +1,77 @@
+.world-map-screen {
+  background-color: #1e2a38;
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.regions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.region-box {
+  background-color: #2a3a50;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  position: relative;
+  top: 0;
+}
+
+.region-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+.region-box.selected {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+}
+
+.locked {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.locked-text {
+  font-style: italic;
+  color: #ccc;
+}
+
+.region-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.region-box ul li {
+  margin: 5px 0;
+}
+
+/* Continue button area adjustments */
+#confirm-region {
+  background-color: #1e2a38;
+  padding: 50px 0;
+}
+
+#confirm-region button {
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 25px;
+}

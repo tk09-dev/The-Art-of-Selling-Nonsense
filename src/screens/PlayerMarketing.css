@@ -1,0 +1,118 @@
+.marketing-screen {
+  background-color: #1e2a38;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.marketing-header {
+  position: sticky;
+  top: 0;
+  background-color: #1e2a38;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  border-bottom: 1px solid white;
+  z-index: 100;
+}
+
+.company-name {
+  font-family: 'Horizon', sans-serif;
+  font-size: 28px;
+}
+
+.current-category {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.back-button {
+  padding: 10px 24px;
+  background-color: #e6c483;
+  color: #1e2a38;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-selection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campaign-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.campaign-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6c483;
+  color: #1e2a38;
+  padding: 20px;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+.campaign-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.create-new-button, .submit-campaign {
+  background-color: #e6c483;
+  color: #1e2a38;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-campaign {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.input-box, .description-box, .budget-box, .type-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+  padding: 12px;
+}
+
+.type-options label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.type-options input[type="checkbox"] {
+  margin-right: 8px;
+}

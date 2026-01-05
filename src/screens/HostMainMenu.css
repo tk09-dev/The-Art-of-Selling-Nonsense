@@ -1,0 +1,125 @@
+.host-menu-screen {
+  background-color: #1e2a38;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 20px 40px;
+}
+
+.host-title {
+  font-family: 'Horizon', sans-serif;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: white;
+  text-align: center;
+}
+
+.host-menu-content {
+  display: flex;
+  gap: 40px;
+}
+
+.host-menu-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-button {
+  background-color: white;
+  color: #1e2a38;
+  border-radius: 20px;
+  padding: 15px 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+}
+
+.menu-button:hover {
+  background-color: #e6c483;
+  color: #1e2a38;
+}
+
+.host-menu-main-box {
+  background-color: #e6c483;
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.host-menu-main-box:hover {
+  transform: scale(1.02);
+}
+
+.host-menu-main-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1e2a38;
+  font-weight: bold;
+}
+
+.host-menu-main-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #1e2a38;
+}
+
+.host-menu-main-box li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.end-round-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.end-round-button {
+  background-color: #e6c483;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  transition: background 0.2s;
+}
+
+.end-round-button:hover {
+  background-color: #d4b26b;
+}
+
+/* New: Leaderboard specific styling */
+.leaderboard-box {
+  padding: 20px;
+  background-color: #e6c483;
+  border-radius: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #1e2a38;
+}
+
+.leaderboard-box ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.leaderboard-box li {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.leaderboard-box:hover {
+  transform: scale(1.02);
+}

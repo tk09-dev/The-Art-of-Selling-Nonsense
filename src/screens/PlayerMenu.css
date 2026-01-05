@@ -1,0 +1,127 @@
+/* PlayerMenu.css */
+
+.player-menu-screen {
+  display: flex;
+  flex-direction: row;
+  background-color: #1e2a38; /* full navy background */
+  height: 100vh;
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Company title at the top, centered */
+.company-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Horizon', sans-serif;
+  font-size: 50px;
+  color: white;
+}
+
+/* Left-side buttons container */
+.menu-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 100px; /* below title */
+  z-index: 1;
+}
+
+/* Buttons with emojis (untouched) */
+.menu-button {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  padding: 14px 30px;
+  background-color: #1e2a38; /* navy */
+  color: white;
+  border: 2px solid #e6c483;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  width: 220px;
+}
+
+.menu-button:hover {
+  transform: translateY(-4px);
+  background-color: #2a3b52;
+}
+
+.menu-button .symbol {
+  margin-right: 12px;
+  font-size: 28px;
+}
+
+/* Main box next to buttons, positioned higher and to the right */
+.menu-main-box {
+  background-color: #e6c483; /* big orange box */
+  border-radius: 20px;
+  padding: 40px;
+  position: absolute; 
+  top: 140px; /* higher than buttons */
+  left: 320px; /* to the right of buttons */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 500px;
+  max-width: 600px;
+}
+
+/* Product name inside white box */
+.product-box {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* Company logo & small name */
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.company-logo .small-company-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Stats inside main box */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Request Next Round button at the previous right-side position */
+.request-round-button {
+  position: absolute;
+  bottom: 60px; /* slightly above the bottom */
+  right: 60px; /* far right, same horizontal position as main box */
+  padding: 16px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  background-color: #e6c483;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.request-round-button:hover {
+  transform: translateY(-4px);
+}

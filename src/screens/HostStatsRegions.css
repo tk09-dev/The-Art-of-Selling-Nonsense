@@ -1,0 +1,73 @@
+.host-stats-screen {
+  background-color: #1e2a38;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 20px 40px;
+}
+
+.host-stats-header {
+  position: sticky;
+  top: 0;
+  background-color: #1e2a38;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  border-bottom: 1px solid white;
+  z-index: 100;
+}
+
+.back-button {
+  padding: 10px 24px;
+  background-color: #e6c483;
+  color: #1e2a38;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header-stats {
+  font-family: 'Digital-7', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: scrollStats 15s linear infinite;
+  color: white;
+}
+
+@keyframes scrollStats {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.current-category {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.region-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.region-table-container h2 {
+  margin-bottom: 15px;
+}
+
+.region-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.region-table th, .region-table td {
+  border: 1px solid white;
+  padding: 12px;
+  text-align: left;
+  color: white;
+}

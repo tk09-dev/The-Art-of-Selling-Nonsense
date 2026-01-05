@@ -1,0 +1,74 @@
+.host-view-stats-screen {
+  background-color: #1e2a38;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 20px 40px;
+}
+
+.host-view-stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #1e2a38;
+  padding: 12px 30px;
+  border-bottom: 1px solid white;
+  z-index: 100;
+}
+
+.game-title {
+  font-family: 'Horizon', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.host-position {
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Digital-7', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: scrollStats 15s linear infinite;
+}
+
+@keyframes scrollStats {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #e6c483;
+  color: #1e2a38;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.host-stats-content {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.host-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.host-stats-table th, .host-stats-table td {
+  border: 1px solid white;
+  padding: 12px;
+  text-align: left;
+}

@@ -1,0 +1,109 @@
+/* HostNextRoundScreen.css */
+
+.next-round-screen {
+  background-color: #1e2a38;
+  color: white;
+  min-height: 100vh;
+  padding: 30px 40px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next-round-title {
+  font-family: 'Horizon', sans-serif;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: white;
+  text-align: center;
+}
+
+.leaderboard-box {
+  background-color: #e6c483;
+  border-radius: 16px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.leaderboard-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1e2a38;
+}
+
+.leaderboard-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #1e2a38;
+}
+
+.leaderboard-box li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 15px 20px;
+  min-width: 200px;
+  flex: 1;
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.next-round-button {
+  background-color: #e6c483;
+  color: #1e2a38;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.next-round-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.end-game-button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.request-box {
+  background-color: #2a3a4a;
+  color: #e6c483;
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

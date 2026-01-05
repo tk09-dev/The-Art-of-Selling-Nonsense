@@ -1,0 +1,92 @@
+.production-screen {
+  background-color: #1e2a38;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.production-header {
+  position: sticky;
+  top: 0;
+  background-color: #1e2a38;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  border-bottom: 1px solid white;
+  z-index: 100;
+}
+
+.company-name {
+  font-family: 'Horizon', sans-serif;
+  font-size: 28px;
+}
+
+.current-category {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.production-content {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+}
+
+.region-box {
+  background-color: #ffffff10;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 280px;
+}
+
+.change-region-button {
+  margin-top: 15px;
+  background-color: #e6c483;
+  border: none;
+  color: #1e2a38;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-box {
+  background-color: #e6c483;
+  color: #1e2a38;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1;
+}
+
+.product-box input, .product-box select {
+  width: 100%;
+  margin: 5px 0 15px 0;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.calculate-production-button {
+  background-color: #ffffff;
+  color: #1e2a38;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.production-results {
+  margin: 30px 40px;
+}
+
+.production-results table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.production-results th, .production-results td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+}

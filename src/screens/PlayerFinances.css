@@ -1,0 +1,89 @@
+.finances-screen {
+  background-color: #1e2a38;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+.finances-header {
+  position: sticky;
+  top: 0;
+  background-color: #1e2a38;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  border-bottom: 1px solid white;
+  z-index: 100;
+  flex-wrap: wrap; /* allow text to wrap instead of overlap */
+}
+
+.company-name {
+  font-family: 'Horizon', sans-serif;
+  font-size: 28px;
+}
+
+.header-stats {
+  font-family: 'Digital-7', monospace; /* import a digital font */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: scrollStats 15s linear infinite;
+  max-width: 600px; /* prevents it from overlapping buttons */
+}
+
+@keyframes scrollStats {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.current-category {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.back-button {
+  padding: 10px 24px;
+  background-color: #e6c483;
+  color: #1e2a38;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.finances-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.finances-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.finances-table th, .finances-table td {
+  border: 1px solid white;
+  padding: 12px;
+  text-align: left;
+}
+
+.graphs {
+  display: flex;
+  gap: 40px;
+}
+
+.graph {
+  background-color: #e6c483;
+  border-radius: 16px;
+  flex: 1;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #1e2a38;
+}

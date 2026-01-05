@@ -1,0 +1,117 @@
+/* ===============================
+   HOST END GAME SCREEN
+================================ */
+
+.next-round-screen {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2a3b52, #0f1722);
+  color: white;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next-round-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.next-round-screen h2 {
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+.loading-spinner {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* ===============================
+   LEADERBOARD
+================================ */
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 700px;
+}
+
+.leaderboard-list li {
+  background: white;
+  color: #1e2a38;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.leaderboard-list li:hover {
+  transform: scale(1.015);
+}
+
+.leaderboard-list li strong {
+  font-size: 1.15rem;
+}
+
+/* 🏆 WINNER SPECIAL STYLING */
+.leaderboard-list li:first-child {
+  background: linear-gradient(135deg, #fff3b0, #f5d76e);
+  border: 3px solid gold !important;
+  box-shadow: 0 15px 40px rgba(255,215,0,0.35);
+}
+
+.leaderboard-list li:first-child strong {
+  font-size: 1.3rem;
+}
+
+/* ===============================
+   STATS TEXT
+================================ */
+
+.leaderboard-list li div {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ===============================
+   CHART SECTION
+================================ */
+
+.next-round-screen h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.recharts-wrapper {
+  font-size: 0.85rem;
+}
+
+/* ===============================
+   EXIT BUTTON
+================================ */
+
+.next-round-screen button {
+  margin-top: 50px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #e6c483, #d4af37);
+  color: #1e2a38;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+}
+
+.next-round-screen button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+

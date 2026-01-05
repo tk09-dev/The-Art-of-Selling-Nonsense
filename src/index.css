@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.horizon-title {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}

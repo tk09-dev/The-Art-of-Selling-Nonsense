@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Full screen, navy background, centered content */
+.host-lobby {
+  background-color: #1e2a38; /* navy */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center; /* vertical centering */
+  align-items: center; /* horizontal centering */
+  color: white; /* default text color */
+  padding: 40px;
+  text-align: center;
+}
+
+/* Game title font */
+.horizon-title {
+  font-family: 'Horizon', sans-serif; /* make sure Horizon is imported */
+  font-size: 48px;
   color: white;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Lobby code styling */
+.lobby-code {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Teams grid — centered */
+.teams-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+/* Team card styling */
+.team-card {
+  background: #e6c483;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 120px;
+  cursor: default;
+}
+
+/* Waiting text */
+.waiting-text {
+  color: #ccc;
+  text-align: center;
+  width: 100%;
+}
+
+/* Start Game button styling */
+.primary-button {
+  background: #e6c483;
+  color: black;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Host product approval modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Host modal box */
+.modal-box {
+  background-color: white;
+  color: #1e2a38; /* 🔥 FIX: force dark text */
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* Navy inner boxes for product name and description */
+.navy-box {
+  background-color: #1e2a38;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+/* Individual field inside modal */
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

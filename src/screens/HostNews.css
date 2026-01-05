@@ -1,0 +1,267 @@
+/* =========================
+   GLOBAL CONTAINER
+========================= */
+
+.host-news-screen {
+  min-height: 100vh;
+  background-color: #f5f4f1;
+  color: #1e1e1e;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  padding: 32px 48px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+
+.host-news-screen > button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.host-news-screen > button:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.host-news-screen h1 {
+  font-size: 36px;
+  margin: 0 0 32px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #222;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   STATES
+========================= */
+
+.host-news-screen p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.host-news-screen p:first-of-type {
+  margin-top: 24px;
+}
+
+/* =========================
+   ARTICLE LIST
+========================= */
+
+.news-article {
+  background-color: #ffffff;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  border-left: 6px solid #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   ARTICLE TITLE
+========================= */
+
+.news-article h2 {
+  font-size: 26px;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+/* =========================
+   ARTICLE BODY
+========================= */
+
+.news-article p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+  color: #2a2a2a;
+}
+
+/* =========================
+   ARTICLE META
+========================= */
+
+.news-article small {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================
+   BREAKING NEWS
+========================= */
+
+.news-article.breaking {
+  position: relative;
+  animation: breakingFadeIn 0.6s ease-out;
+  border-left-color: #b30000;
+}
+
+.news-article.breaking::before {
+  content: "BREAKING";
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background-color: #b30000;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 4px 8px;
+}
+
+@keyframes breakingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   BREAKING NEWS POPUP
+========================= */
+
+.breaking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayFadeIn 0.3s ease-out;
+}
+
+.breaking-popup {
+  background: #111;
+  color: #f5f5f5;
+  width: 90%;
+  max-width: 520px;
+  padding: 28px;
+  border-left: 6px solid #b30000;
+  box-shadow: 0 0 40px rgba(179, 0, 0, 0.35);
+  animation: popupSlideIn 0.45s ease-out;
+}
+
+.breaking-header {
+  color: #ff4d4d;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.breaking-popup h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.breaking-body {
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.breaking-confirm {
+  margin-top: 22px;
+  width: 100%;
+  background: #b30000;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.breaking-confirm:hover {
+  background: #e60000;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .host-news-screen {
+    padding: 24px;
+  }
+
+  .host-news-screen h1 {
+    font-size: 28px;
+  }
+
+  .news-article {
+    padding: 22px;
+  }
+
+  .news-article h2 {
+    font-size: 22px;
+  }
+
+  .news-article p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .host-news-screen {
+    padding: 18px;
+  }
+
+  .host-news-screen h1 {
+    font-size: 24px;
+  }
+
+  .news-article {
+    padding: 18px;
+  }
+
+  .news-article h2 {
+    font-size: 20px;
+  }
+}
+
+
+

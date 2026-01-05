@@ -1,0 +1,64 @@
+.host-launch-event-screen {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.launch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.current-category {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.event-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  flex: 1 1 30%;
+  min-width: 200px;
+  transition: all 0.2s;
+}
+
+.event-item.selected {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+}
+
+.launch-controls {
+  margin-top: 20px;
+}
+
+.launch-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.launch-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
