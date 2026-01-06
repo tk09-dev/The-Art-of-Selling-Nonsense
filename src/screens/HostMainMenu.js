@@ -12,7 +12,7 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         if (res.data.pendingProducts && res.data.pendingProducts.length > 0) {
           setPendingProduct(res.data.pendingProducts[0]);
         } else {
@@ -34,7 +34,7 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
   setPendingProduct(null); // UI lock immediately
 
   try {
-    await axios.post('http://localhost:5050/approve-product', {
+    await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/approve-product', {
       lobbyCode,
       companyName: approvingCompany
     });
@@ -52,7 +52,7 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
   setPendingProduct(null); // UI lock
 
   try {
-    await axios.post('http://localhost:5050/refuse-product', {
+    await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/refuse-product', {
       lobbyCode,
       companyName: refusingCompany,
       reason: refuseReason
@@ -67,7 +67,7 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
   const handleEndRound = async () => {
   try {
     // Only call end-round, the backend will handle AI calculation
-    await axios.post('http://localhost:5050/end-round', { lobbyCode });
+    await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/end-round', { lobbyCode });
     // Move to next round screen
     setScreen('hostNextRound');
   } catch (err) {
