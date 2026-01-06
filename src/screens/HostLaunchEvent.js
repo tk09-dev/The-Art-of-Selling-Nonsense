@@ -40,7 +40,7 @@ export default function HostLaunchEvent({ lobbyCode, setScreen }) {
 
   
 useEffect(() => {
-  fetch('http://localhost:5050/apply-launch-events', {
+  fetch('https://the-art-of-selling-nonsense-backend.onrender.com/apply-launch-events', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -54,7 +54,7 @@ useEffect(() => {
 useEffect(() => {
   const loadLobbyData = async () => {
     try {
-      const res = await fetch(`http://localhost:5050/lobby-state/${lobbyCode}`);
+      const res = await fetch(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby-state/${lobbyCode}`);
       const data = await res.json();
 
       if (data.players) {
