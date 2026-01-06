@@ -8,7 +8,7 @@ export default function HostApprovalModal({ lobbyCode, product, onClose }) {
 
   const handleApprove = async () => {
     try {
-      await axios.post('http://localhost:5050/approve-product', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/approve-product', {
         lobbyCode,
         companyName: product.companyName
       });
@@ -25,7 +25,7 @@ export default function HostApprovalModal({ lobbyCode, product, onClose }) {
     }
 
     try {
-      await axios.post('http://localhost:5050/refuse-product', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/refuse-product', {
         lobbyCode,
         companyName: product.companyName,
         reason: refuseReason
