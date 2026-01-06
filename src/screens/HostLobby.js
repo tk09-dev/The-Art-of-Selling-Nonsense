@@ -10,7 +10,7 @@ export default function HostLobby({ lobbyCode, onStartGame }) {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         const lobby = res.data;
         setTeams(lobby.players || []);
 
@@ -31,7 +31,7 @@ export default function HostLobby({ lobbyCode, onStartGame }) {
   const handleApprove = async () => {
     if (!pendingProduct) return;
     try {
-      await axios.post('http://localhost:5050/approve-product', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/approve-product', {
         lobbyCode,
         companyName: pendingProduct.companyName
       });
@@ -45,7 +45,7 @@ export default function HostLobby({ lobbyCode, onStartGame }) {
   const handleRefuse = async () => {
     if (!pendingProduct || !refuseReason) return;
     try {
-      await axios.post('http://localhost:5050/refuse-product', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/refuse-product', {
         lobbyCode,
         companyName: pendingProduct.companyName,
         reason: refuseReason
@@ -86,7 +86,7 @@ export default function HostLobby({ lobbyCode, onStartGame }) {
         disabled={teams.length === 0}
         onClick={async () => {
           try {
-            await axios.post('http://localhost:5050/start-game', { lobbyCode });
+            await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/start-game', { lobbyCode });
             onStartGame();
           } catch (err) {
             console.error('Failed to start game');
