@@ -7,7 +7,7 @@ export default function LoginHost({ onLogin }) {
 
   const handleLogin = async () => {
     try {
-     const res = await api.post('http://localhost:5050/create-lobby', {
+     const res = await api.post('https://the-art-of-selling-nonsense-backend.onrender.com/create-lobby', {
   username,
   password
 });
