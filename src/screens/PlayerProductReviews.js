@@ -14,7 +14,7 @@ export default function PlayerProductReviews({
   const fetchReviews = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5050/reviews/${lobbyCode}/${companyName}`
+        `https://the-art-of-selling-nonsense-backend.onrender.com/reviews/${lobbyCode}/${companyName}`
       );
 
       const { currentRound, reviewsByRound } = res.data;
