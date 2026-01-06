@@ -8,7 +8,7 @@ export default function PlayerOtherCompanies({ lobbyCode, setScreen }) {
   useEffect(() => {
     async function fetchCompanies() {
       try {
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         setCompanies(res.data.leaderboard || []);
       } catch (err) {
         console.error('Failed to load companies', err);
