@@ -40,7 +40,7 @@ useEffect(() => {
   // Send campaigns to backend
   const sendCampaignsToBackend = async (campaignsToSend) => {
     try {
-      await axios.post('http://localhost:5050/submit-marketing', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/submit-marketing', {
         lobbyCode,
         companyName,
        strategy: {
