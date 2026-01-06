@@ -12,7 +12,7 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
     const fetchLeaderboard = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         setLeaderboard(res.data.leaderboard || []);
         setLoading(false);
       } catch (err) {
@@ -28,7 +28,7 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
 
   const handleNextRound = async () => {
     try {
-      await axios.post('http://localhost:5050/start-next-round', { lobbyCode });
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/start-next-round', { lobbyCode });
       onNextRound(); // return to host main menu
     } catch (err) {
       console.error('Failed to start next round', err);
