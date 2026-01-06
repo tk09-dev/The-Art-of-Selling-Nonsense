@@ -18,7 +18,7 @@ export default function PlayerEndGameScreen({ lobbyCode, playerName, onExit }) {
   useEffect(() => {
     const fetchFinalResults = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         const list = res.data.players || [];
 
         setPlayers(
