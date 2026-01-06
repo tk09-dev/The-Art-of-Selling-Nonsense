@@ -62,7 +62,7 @@ function App() {
 
   const handleSubmitCompany = async () => {
     try {
-      await axios.post('http://localhost:5050/join-lobby', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/join-lobby', {
         lobbyCode,
         companyName
       });
@@ -95,7 +95,7 @@ function App() {
     if (screen === 'waiting') {
       interval = setInterval(async () => {
         try {
-          const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+          const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
           if (res.data.gameStarted) {
             clearInterval(interval);
             setScreen('productCreation');
@@ -118,7 +118,7 @@ useEffect(() => {
   const interval = setInterval(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5050/lobby/${lobbyCode}`
+        `https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`
       );
 
       setCalculating(res.data.calculating);
@@ -163,7 +163,7 @@ useEffect(() => {
 
   async function fetchNews() {
     try {
-      const res = await fetch(`http://localhost:5050/news-events/${lobbyCode}`);
+      const res = await fetch(`https://the-art-of-selling-nonsense-backend.onrender.com/news-events/${lobbyCode}`);
       const data = await res.json();
 
       setNews(data.news || []);
