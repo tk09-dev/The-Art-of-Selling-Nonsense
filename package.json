@@ -1,7 +1,6 @@
-"homepage": "https://tk09-dev.github.io/The-Art-of-Selling-Nonsense",
-
 {
   "name": "frontend",
+  "homepage": "https://tk09-dev.github.io/The-Art-of-Selling-Nonsense",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
