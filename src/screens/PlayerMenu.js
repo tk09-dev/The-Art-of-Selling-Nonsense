@@ -22,7 +22,7 @@ export default function PlayerMenu({ companyName, setScreen, lobbyCode }) {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const resLobby = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const resLobby = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         const playerData = resLobby.data.players.find(p => p.name === companyName);
         if (playerData) {
           setBudget(
@@ -41,7 +41,7 @@ setProfit(
           setFitsBudget(playerData.fitsBudget || false);
         }
 
-        const resRound = await axios.get(`http://localhost:5050/round-state/${lobbyCode}`);
+        const resRound = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/round-state/${lobbyCode}`);
         if (resRound.data.roundEnded) {
           setScreen('playerNextRound');
         }
