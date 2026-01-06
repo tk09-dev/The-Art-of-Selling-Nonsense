@@ -5,16 +5,16 @@ import './PlayerProduction.css';
 export default function PlayerProduction({ companyName, selectedRegion, setSelectedRegion, setScreen, lobbyCode }) {
   const regionData = {
     A: { minWage: 15.96, energyPrice: 0.187, warehouseRent: 5.77, factoryRent: 5.77, HDI: 0.944, madeInImpact: 1 },
-    B: { minWage: 8.16, energyPrice: 0.083, warehouseRent: 8.16, factoryRent: 23.31, HDI: 0.963, madeInImpact: 0.8 },
-    C: { minWage: 36.32, energyPrice: 0.106, warehouseRent: 36.32, factoryRent: 36.32, HDI: 0.943, madeInImpact: 0.65 },
-    D: { minWage: 5, energyPrice: 0.138, warehouseRent: 5, factoryRent: 10, HDI: 0.944, madeInImpact: 0.65 },
-    E: { minWage: 3.96, energyPrice: 0.141, warehouseRent: 3.96, factoryRent: 7.34, HDI: 0.866, madeInImpact: 0.65 },
-    F: { minWage: 10, energyPrice: 0.11, warehouseRent: 10, factoryRent: 16.6, HDI: 0.95, madeInImpact: 0.95 },
-    G: { minWage: 5.8, energyPrice: 0.117, warehouseRent: 5.8, factoryRent: 15.48, HDI: 0.929, madeInImpact: 0.9 },
-    H: { minWage: 4, energyPrice: 0.096, warehouseRent: 4, factoryRent: 13, HDI: 0.797, madeInImpact: 0.3 },
-    I: { minWage: 1.18, energyPrice: 0.078, warehouseRent: 1.18, factoryRent: 7.97, HDI: 0.74, madeInImpact: 0.25 },
-    J: { minWage: 3.24, energyPrice: 0.036, warehouseRent: 3.24, factoryRent: 8.57, HDI: 0.8, madeInImpact: 0.5 },
-    K: { minWage: 5.7, energyPrice: 0.094, warehouseRent: 5.7, factoryRent: 18.29, HDI: 0.81, madeInImpact: 0.3 }
+    B: { minWage: 15.45, energyPrice: 0.083, warehouseRent: 8.16, factoryRent: 8.16, HDI: 0.963, madeInImpact: 0.8 },
+    C: { minWage: 14.07, energyPrice: 0.106, warehouseRent: 36.32, factoryRent: 36.32, HDI: 0.943, madeInImpact: 0.65 },
+    D: { minWage: 6.62, energyPrice: 0.138, warehouseRent: 5, factoryRent: 5, HDI: 0.944, madeInImpact: 0.65 },
+    E: { minWage: 5.04, energyPrice: 0.141, warehouseRent: 3.96, factoryRent: 3.96, HDI: 0.866, madeInImpact: 0.65 },
+    F: { minWage: 11.31, energyPrice: 0.110, warehouseRent: 10, factoryRent: 10, HDI: 0.95, madeInImpact: 0.95 },
+    G: { minWage: 8.39, energyPrice: 0.117, warehouseRent: 5.8, factoryRent: 5.8, HDI: 0.929, madeInImpact: 0.9 },
+    H: { minWage: 1.35, energyPrice: 0.096, warehouseRent: 4, factoryRent: 4, HDI: 0.797, madeInImpact: 0.3 },
+    I: { minWage: 1.18, energyPrice: 0.078, warehouseRent: 1.18, factoryRent: 1.18, HDI: 0.74, madeInImpact: 0.25 },
+    J: { minWage: 4.15, energyPrice: 0.036, warehouseRent: 3.24, factoryRent: 3.24, HDI: 0.8, madeInImpact: 0.5 },
+    K: { minWage: 2.35, energyPrice: 0.094, warehouseRent: 5.7, factoryRent: 5.7, HDI: 0.81, madeInImpact: 0.3 }
   };
 
   // per-unit constants (hidden from player)
@@ -51,8 +51,8 @@ export default function PlayerProduction({ companyName, selectedRegion, setSelec
   }, [selectedRegion]);
 
   const sustainabilityModifier =
-    sustainability === 'Very High' ? 1.2 :
-    sustainability === 'High' ? 1.1 :
+    sustainability === 'Very High' ? 1.9 :
+    sustainability === 'High' ? 1.4 :
     1;
 
   const handleCalculateProduction = () => {
@@ -107,7 +107,7 @@ export default function PlayerProduction({ companyName, selectedRegion, setSelec
 
 
   try {
-    await axios.post('http://localhost:5050/confirm-production', productionData);
+    await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/confirm-production', productionData);
     console.log('Production confirmed on backend');
   } catch (err) {
     console.error('Failed to confirm production:', err);
