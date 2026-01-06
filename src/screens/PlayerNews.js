@@ -17,7 +17,7 @@ export default function PlayerNews({ setScreen, lobbyCode }) {
     async function fetchNews() {
       try {
         const response = await fetch(
-          `http://localhost:5050/news-events/${lobbyCode}`
+          `https://the-art-of-selling-nonsense-backend.onrender.com/news-events/${lobbyCode}`
         );
         const data = await response.json();
 
