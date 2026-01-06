@@ -13,7 +13,7 @@ export default function PlayerNextRoundScreen({ lobbyCode, setScreen }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+        const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
         setLeaderboard(res.data.leaderboard || []);
         setLoading(false);
 
