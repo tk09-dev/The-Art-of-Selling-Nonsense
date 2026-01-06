@@ -13,7 +13,7 @@ export default function ProductCreation({ lobbyCode, companyName, onRequestStart
   const handleRequest = async () => {
     if (!productName || !productDesc) return;
     try {
-      await axios.post('http://localhost:5050/submit-product', {
+      await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/submit-product', {
         lobbyCode,
         companyName,
         productName,
@@ -32,7 +32,7 @@ useEffect(() => {
 
   const interval = setInterval(async () => {
     try {
-      const res = await axios.get(`http://localhost:5050/lobby/${lobbyCode}`);
+      const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
       const lobby = res.data;
       const player = lobby.players.find(p => p.name === companyName);
       if (!player) return;
@@ -118,9 +118,9 @@ useEffect(() => {
       }}>
         <div style={{
           display: 'inline-block',
-          animation: 'scrollText 20s linear infinite'
+          animation: 'scrollText 17s linear infinite'
         }}>
-          While waiting for approval, think about an unnecessary product idea. If you don’t have an idea, ask ChatGPT or Google for help.
+          While waiting for approval, think about a good marketing strategy idea. If you don’t have an idea, ask ChatGPT or Google for help. Good luck!
         </div>
       </div>
 
