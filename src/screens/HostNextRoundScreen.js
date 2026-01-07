@@ -60,24 +60,26 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
           </ul>
 
           {/* HOST ROUND SUMMARY CHART */}
-          /<div style={{ width: '100%', height: 350, marginTop: 40 }}>
-           / /<h3>Total Revenue by Company</h3>
+  {/*
+          <div style={{ width: '100%', height: 350, marginTop: 40 }}>
+            <h3>Total Revenue by Company</h3>
 
-            //<ResponsiveContainer>
-              //<BarChart
-                //data={leaderboard.map(c => ({
-                  //name: c.name,
-                  //value: c.revenue
+            <ResponsiveContainer>
+              <BarChart
+               data={leaderboard.map(c => ({
+                  name: c.name,
+                  value: c.revenue
                 }))}
               >
-               // <XAxis dataKey="name" />
-                //<YAxis />
-                //<Tooltip />
-                //<Bar dataKey="value" />
-             // </BarChart>
-           // </ResponsiveContainer>
-        //  </div>
-       // </>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="value" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          */}
+        </>
       )}
 
 
