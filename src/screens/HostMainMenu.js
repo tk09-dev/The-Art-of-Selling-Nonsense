@@ -8,6 +8,8 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [pendingProduct, setPendingProduct] = useState(null);
   const [refuseReason, setRefuseReason] = useState('');
+  const viewStatsDisabled = true; // or some condition
+
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -64,16 +66,20 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
 };
 
 
-  const handleEndRound = async () => {
+ const handleEndRound = async () => {
   try {
-    // Only call end-round, the backend will handle AI calculation
-    await axios.post('https://the-art-of-selling-nonsense-backend.onrender.com/end-round', { lobbyCode });
-    // Move to next round screen
-    setScreen('hostNextRound');
+    await axios.post(
+      'https://the-art-of-selling-nonsense-backend.onrender.com/end-round',
+      { lobbyCode }
+    );
+
+    // Host goes to human review
+    setScreen('hostRoundReview');
   } catch (err) {
     console.error('Failed to end round', err);
   }
 };
+
 
   return (
     <div className="host-menu-screen">
@@ -81,7 +87,14 @@ export default function HostMainMenu({ lobbyCode, setScreen }) {
 
       <div className="host-menu-content">
         <div className="host-menu-left">
-          <button className="menu-button" onClick={() => setScreen('hostViewStats')}>View Stats</button>
+          <button
+  className="menu-button"
+  disabled={viewStatsDisabled}
+  onClick={() => setScreen('hostViewStats')}
+>
+  View Stats
+</button>
+
 
           <button
   className="menu-button"

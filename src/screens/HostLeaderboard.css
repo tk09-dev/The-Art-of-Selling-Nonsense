@@ -1,3 +1,5 @@
+/* HostLeaderboard.css */
+
 .leaderboard-screen {
   position: fixed;
   top: 50px;
@@ -6,7 +8,7 @@
   width: 80%;
   max-width: 900px;
   background-color: #1e2a38;
-  color: white;
+  color: #f5f7fa;
   border-radius: 16px;
   padding: 20px;
   z-index: 200;
@@ -17,6 +19,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+}
+
+.leaderboard-header h2 {
+  margin: 0;
+  color: #ffffff;
 }
 
 .close-button {
@@ -37,7 +45,7 @@
 }
 
 .stat-button {
-  background-color: white;
+  background-color: #ffffff;
   color: #1e2a38;
   border-radius: 10px;
   border: none;
@@ -60,20 +68,31 @@
 .leaderboard-list li {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #e6c483;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(230, 196, 131, 0.4);
   font-weight: bold;
+  color: #f5f7fa;
+}
+
+.leaderboard-list li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .rank {
   width: 30px;
+  text-align: center;
+  color: #e6c483;
 }
 
 .company-name {
   flex: 1;
+  padding-left: 10px;
+  color: #ffffff;
 }
 
 .stat-value {
-  width: 100px;
+  width: 120px;
   text-align: right;
+  color: #e6c483;
 }

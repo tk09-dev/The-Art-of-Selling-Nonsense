@@ -41,7 +41,8 @@ setProfit(
           setFitsBudget(playerData.fitsBudget || false);
         }
 
-        const resRound = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/round-state/${lobbyCode}`);
+        const resRound = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com
+/round-state/${lobbyCode}`);
         if (resRound.data.roundEnded) {
           setScreen('playerNextRound');
         }

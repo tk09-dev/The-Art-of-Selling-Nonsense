@@ -37,6 +37,15 @@ function JoinLobby({ onSubmitCode }) {
       <button onClick={submit}>
         Join Lobby
       </button>
+
+{/* Guide button */}
+<button
+  onClick={() => window.open(process.env.PUBLIC_URL + '/pdfs/pdf3.pdf', '_blank', 'noopener,noreferrer')}
+  style={{ marginTop: '10px' }}
+>
+  Guide
+</button>
+
     </div>
   );
 }

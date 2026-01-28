@@ -1,0 +1,308 @@
+/* =========================
+   Screen
+========================= */
+.host-review-screen {
+  min-height: 100vh;
+  padding: 40px 60px;
+
+  background: #1e2a38;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   Title & Subtitle
+========================= */
+.host-review-screen h1 {
+  margin-bottom: 6px;
+  text-align: center;
+
+  font-family: 'Horizon', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+.host-review-screen p {
+  margin-bottom: 40px;
+  text-align: center;
+
+  font-size: 16px;
+  opacity: 0.75;
+}
+
+/* =========================
+   Company Card (STABILIZED GRID)
+========================= */
+.company-review-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "product product"
+    "production marketing"
+    "overall overall";
+
+  gap: 14px;
+  padding: 18px;
+  margin-bottom: 24px;
+
+  background: #e6c483;
+  color: #1e2a38;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+
+  /* 🔒 layout stabilization */
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+/* =========================
+   Review Sections (NORMALIZED)
+========================= */
+.review-section {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  gap: 8px;
+  padding: 14px 16px;
+
+  border-radius: 12px;
+  background: rgba(255, 247, 223, 0.92);
+
+  box-sizing: border-box;
+}
+
+/* Headings */
+.review-section strong {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* =========================
+   Grid Placement
+========================= */
+.review-section.product {
+  grid-area: product;
+}
+
+.review-section.production {
+  grid-area: production;
+}
+
+.review-section.marketing {
+  grid-area: marketing;
+}
+
+.review-section.overall {
+  grid-area: overall;
+  background: rgba(255, 247, 223, 0.97);
+}
+
+/* =========================
+   Campaign
+========================= */
+.campaign-line {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #fff7df;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   Labels & Inputs (ALIGNED)
+========================= */
+.review-section label,
+.review-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.review-section input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: #1e2a38;
+}
+
+/* Textareas normalized */
+textarea {
+  width: 100%;
+  min-height: 80px;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+  resize: vertical;
+
+  background: #fff7df;
+  color: #1e2a38;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 42, 56, 0.2);
+}
+
+
+/* =========================
+   Checkbox Alignment (FIXED)
+========================= */
+.review-section label.checkbox-inline {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+
+  width: auto;
+  cursor: pointer;
+}
+
+.review-section label.checkbox-inline input[type="checkbox"] {
+  margin: 0;
+}
+
+
+
+
+/* =========================
+   Controls (Stacked Left, Host Note Right, wider selects)
+========================= */
+.review-controls {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr; /* Left column wider, right = host note */
+  gap: 12px;
+  width: 100%;
+  align-items: start;
+}
+
+/* Left column: stack Status + Strategy vertically */
+.review-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Select boxes — wider, old color */
+.review-controls select {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+
+  background: #fff7df; /* old color */
+  color: #1e2a38;
+  font-weight: 500;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.review-controls select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 42, 56, 0.2);
+}
+
+/* Right column: Overall host note textarea */
+.review-controls textarea {
+  grid-column: 2;
+  grid-row: 1 / span 2; /* spans height of both selects */
+  width: 100%;
+  min-height: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  resize: vertical;
+
+  background: #fff7df; /* old color */
+  color: #1e2a38;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+/* =========================
+   Submit Button
+========================= */
+.submit-review-button {
+  display: block;
+  margin: 32px auto 0;
+  padding: 12px 28px;
+
+  background: #e6c483;
+  color: #1e2a38;
+  border: none;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-review-button:hover {
+  background: #d4b26b;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Empty State
+========================= */
+.host-review-screen div[style*="Waiting for companies"] {
+  margin-top: 30px;
+  text-align: center;
+
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* =========================
+   Mobile Layout (SAFE STACK)
+========================= */
+@media (max-width: 768px) {
+  .host-review-screen {
+    padding: 24px 20px;
+  }
+
+.review-controls {
+  grid-template-columns: 1fr;
+}
+
+.review-controls textarea {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+
+  .company-review-box {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "product"
+      "production"
+      "marketing"
+      "overall";
+  }
+}

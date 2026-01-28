@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './NextRoundScreen.css';
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+//import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame }) {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -22,8 +22,8 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
     };
 
     fetchLeaderboard();
-    const interval = setInterval(fetchLeaderboard, 1000); // keep updating
-    return () => clearInterval(interval);
+   
+ //   return () => clearInterval(interval);
   }, [lobbyCode]);
 
   const handleNextRound = async () => {
@@ -59,13 +59,14 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
             ))}
           </ul>
 
-          {/* HOST ROUND SUMMARY CHART */}
+          {/* HOST ROUND SUMMARY CHART 
+
           <div style={{ width: '100%', height: 350, marginTop: 40 }}>
             <h3>Total Revenue by Company</h3>
 
             <ResponsiveContainer>
               <BarChart
-                data={leaderboard.map(c => ({
+               data={leaderboard.map(c => ({
                   name: c.name,
                   value: c.revenue
                 }))}
@@ -77,6 +78,8 @@ export default function HostNextRoundScreen({ lobbyCode, onNextRound, onEndGame 
               </BarChart>
             </ResponsiveContainer>
           </div>
+*/}
+
         </>
       )}
 

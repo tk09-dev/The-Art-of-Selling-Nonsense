@@ -26,6 +26,9 @@ import HostNextRoundScreen from './screens/HostNextRoundScreen';
 import PlayerNextRoundScreen from './screens/PlayerNextRoundScreen';
 import HostEndGameScreen from './screens/HostEndGameScreen';
 import PlayerEndGameScreen from './screens/PlayerEndGameScreen';
+import HostRoundReview from './screens/HostRoundReview';
+import PlayerWaitingScreen from './screens/PlayerWaitingScreen';
+
 
 
 import axios from 'axios';
@@ -46,6 +49,13 @@ function App() {
   const [currentRound, setCurrentRound] = useState(0);
   const [isHost, setIsHost] = useState(false);
   const [calculating, setCalculating] = useState(false);
+  const [hostReviewComplete, setHostReviewComplete] = useState(false);
+  const [roundReviewStarted, setRoundReviewStarted] = useState(false);
+  const [showCalculationOverlay, setShowCalculationOverlay] = useState(false);
+  const calculatingRef = useRef(false);
+
+
+
 
 
 
@@ -117,24 +127,62 @@ useEffect(() => {
 
   const interval = setInterval(async () => {
     try {
-      const res = await axios.get(
-        `https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`
-      );
+      const res = await axios.get(`https://the-art-of-selling-nonsense-backend.onrender.com/lobby/${lobbyCode}`);
+      const isCalculating = res.data.calculating;
+      const roundEnded = res.data.roundEnded;
 
-      setCalculating(res.data.calculating);
+      setCalculating(isCalculating);
 
-      // When calculation ends → move on
-      if (!res.data.calculating && res.data.roundEnded && calculating) {
-  setScreen(isHost ? 'hostNextRound' : 'playerNextRound');
+      // 🔒 START CALCULATIONS ONLY IF HOST PRESSED "CALCULATE"
+if (!roundReviewStarted && isCalculating) {
+  if (isHost) {
+    setScreen('hostRoundReview');
+  } else {
+    setScreen('playerWaiting');
+  }
 }
 
+
+      // ✅ ROUND FINISHED CALCULATING
+if (!isCalculating && roundEnded) {
+  if (isHost) {
+    setScreen('hostNextRound');      // ✅ automatically send host
+    setHostReviewComplete(false);    // reset for next round
+    setRoundReviewStarted(false);    // reset review flag
+  } else {
+    setScreen('playerNextRound');    // players go to next round
+  }
+}
+
+
+// 🔄 ROUND CALCULATION OVERLAY (PLAYERS ONLY)
+const prevCalculating = calculatingRef.current;
+
+// Detect start of calculation
+if (!isHost && !prevCalculating && isCalculating) {
+  setShowCalculationOverlay(true); // show overlay
+}
+
+// Detect end of calculation
+if (!isHost && prevCalculating && !isCalculating) {
+  setShowCalculationOverlay(false); // hide overlay
+  setScreen('playerNextRound');     // advance to next round
+}
+
+// update ref
+calculatingRef.current = isCalculating;
+
+
+
+
     } catch (err) {
-      console.error('Polling calculation state failed');
+      console.error('Polling calculation state failed', err);
     }
   }, 1000);
 
   return () => clearInterval(interval);
-}, [lobbyCode, isHost]);
+}, [lobbyCode, isHost, hostReviewComplete]);
+
 
 
   /* -------------------------
@@ -195,14 +243,39 @@ useEffect(() => {
 }, [news, currentRound]);
 
 
-
- 
-
-// 🔄 ROUND CALCULATION OVERLAY (HOST + PLAYERS)
-if (calculating) {
+// 🔄 ROUND REVIEW: PLAYERS WAITING
+if (!isHost && roundReviewStarted) {
   return <RoundCalculatingOverlay />;
 }
 
+
+ 
+// 🔄 ROUND CALCULATION OVERLAY FOR PLAYERS
+if (showCalculationOverlay && !isHost) {
+  return <RoundCalculatingOverlay />;
+}
+
+
+
+
+if (screen === 'playerWaiting') {
+  return <PlayerWaitingScreen />;
+}
+
+
+
+
+if (screen === 'hostRoundReview') {
+  if (!roundReviewStarted) setRoundReviewStarted(true);
+
+  return (
+    <HostRoundReview
+      lobbyCode={lobbyCode}
+      setScreen={setScreen}
+      onComplete={() => setHostReviewComplete(true)}
+    />
+  );
+}
 
 
 
