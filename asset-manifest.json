@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/The-Art-of-Selling-Nonsense/static/css/main.aabf9c98.css",
-    "main.js": "/The-Art-of-Selling-Nonsense/static/js/main.2cbc40ab.js",
+    "main.js": "/The-Art-of-Selling-Nonsense/static/js/main.8e0202aa.js",
     "static/js/453.8701dc61.chunk.js": "/The-Art-of-Selling-Nonsense/static/js/453.8701dc61.chunk.js",
     "index.html": "/The-Art-of-Selling-Nonsense/index.html",
     "main.aabf9c98.css.map": "/The-Art-of-Selling-Nonsense/static/css/main.aabf9c98.css.map",
-    "main.2cbc40ab.js.map": "/The-Art-of-Selling-Nonsense/static/js/main.2cbc40ab.js.map",
+    "main.8e0202aa.js.map": "/The-Art-of-Selling-Nonsense/static/js/main.8e0202aa.js.map",
     "453.8701dc61.chunk.js.map": "/The-Art-of-Selling-Nonsense/static/js/453.8701dc61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aabf9c98.css",
-    "static/js/main.2cbc40ab.js"
+    "static/js/main.8e0202aa.js"
   ]
 }
